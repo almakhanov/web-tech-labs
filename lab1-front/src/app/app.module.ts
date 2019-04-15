@@ -7,6 +7,8 @@ import { BaseComponent } from './base/base.component';
 import { TaskListComponent } from './task-list/task-list.component';
 import { TaskListByIdComponent } from './task-list-by-id/task-list-by-id.component';
 import { TaskListByIdTasksComponent } from './task-list-by-id-tasks/task-list-by-id-tasks.component';
+import { TasksByIdComponent } from './tasks-by-id/tasks-by-id.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { TaskListByIdTasksComponent } from './task-list-by-id-tasks/task-list-by
     BaseComponent,
     TaskListComponent,
     TaskListByIdComponent,
-    TaskListByIdTasksComponent
+    TaskListByIdTasksComponent,
+    TasksByIdComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
