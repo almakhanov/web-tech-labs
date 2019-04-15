@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ProviderService} from '../data/services/provider.service';
+import {ITaskList} from '../data/model';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-task-list',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskListComponent implements OnInit {
 
-  constructor() { }
+  public taskLists: ITaskList[] = [];
 
-  ngOnInit() {
+  constructor(
+    private provider: ProviderService,
+    private location: Location
+  ) {
   }
 
+  ngOnInit() {
+    this.provider.getTaskLists().then(res => {
+      this.taskLists = res;
+    });
+  }
+
+  navigateBack() {
+    this.location.back();
+  }
 }
