@@ -10,6 +10,7 @@ import {TasksByIdComponent} from './tasks-by-id/tasks-by-id.component';
 import {MainComponent} from './main/main.component';
 import {HttpClientModule} from '@angular/common/http';
 import {ProviderService} from './data/services/provider.service';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {ProviderService} from './data/services/provider.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     ProviderService

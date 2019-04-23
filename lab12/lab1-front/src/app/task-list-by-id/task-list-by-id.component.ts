@@ -26,7 +26,7 @@ export class TaskListByIdComponent implements OnInit {
 
   ngOnInit() {
 
-    this.id = parseInt(this.router.snapshot.paramMap.get('id'), null);
+    this.id = parseInt(this.router.snapshot.paramMap.get('pk'), null);
 
     if (this.id) {
       this.provider.getTaskListDetail(this.id).then(res => {
@@ -37,6 +37,18 @@ export class TaskListByIdComponent implements OnInit {
 
   navigateBack() {
     this.location.back();
+  }
+
+  updateTaskList(){
+    this.provider.updateTaskListDetail(this.taskList).then(res => {
+      this.taskList = res
+    })
+  }
+
+  deleteTaskList(){
+    this.provider.removeTaskListDetail(this.taskList.id).then(() => {
+      this.location.back()
+    })
   }
 
 }

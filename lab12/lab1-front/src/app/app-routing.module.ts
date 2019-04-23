@@ -10,9 +10,9 @@ import {TasksByIdComponent} from './tasks-by-id/tasks-by-id.component';
 const routes: Routes = [
   {path: '', component: MainComponent},
   {path: 'tasklists', component: TaskListComponent},
-  {path: 'tasklists/:id', component: TaskListByIdComponent},
-  {path: 'tasklists/:id/tasks', component: TaskListByIdTasksComponent},
-  {path: 'tasks/:id', component: TasksByIdComponent},
+  {path: 'tasklists/:pk', component: TaskListByIdComponent},
+  {path: 'tasklists/:pk/tasks', component: TaskListByIdTasksComponent},
+  {path: 'tasks/:pk', component: TasksByIdComponent},
 ];
 
 @NgModule({

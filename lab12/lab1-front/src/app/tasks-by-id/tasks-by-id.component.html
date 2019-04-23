@@ -9,12 +9,12 @@
       <div name="body">
         <table class="table table-bordered">
           <tr>
-            <td>ID</td>
+            <td>ID#</td>
             <td>{{task.id}} </td>
           </tr>
           <tr>
             <td>Name</td>
-            <td>{{task.name}} </td>
+            <td><input type="text" class="form-control" [(ngModel)]="task.name"> </td>
           </tr>
           <tr>
             <td>Created At</td>
@@ -22,13 +22,17 @@
           </tr>
           <tr>
             <td>Due on</td>
-            <td>{{task.due_on | date:'yyyy-MM-dd HH:mm:ss'}} </td>
+            <td><input type="text" class="form-control" [(ngModel)]="task.due_on"> </td>
           </tr>
           <tr>
             <td>Status</td>
-            <td>{{task.status}} </td>
+            <td><input type="text" class="form-control" [(ngModel)]="task.status"> </td>
           </tr>
         </table>
+        <div class="pull-right">
+          <button type="button" class="btn btn-warning btn-sm" (click)="updateTask()">Update</button>
+          <button type="button" class="btn btn-danger btn-sm" (click)="deleteTask()">Delete</button>
+        </div>
       </div>
     </div>
   </ng-container>

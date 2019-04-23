@@ -1,5 +1,16 @@
 <app-main>
   <ng-container>
+
+    <br>
+    <div>
+      <div class="form-group">
+        <label for="tasklistname">Create Task List</label>
+        <input type="text" class="form-control" id="tasklistname" [(ngModel)]="taskListName" placeholder="Enter the name">
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="createTaskList()">Create</button>
+    </div>
+    <br>
+
     <div class="container">
       <div class="row">
         <span><h2>TaskLists</h2></span>

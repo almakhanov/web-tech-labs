@@ -17,6 +17,24 @@
 
       </div>
     </div>
+    <br>
+    <div>
+      <table class="table">
+        <tr>
+          <td>#</td>
+          <td>Name</td>
+          <td>Actions</td>
+        </tr>
+        <tr>
+          <td>{{taskList.id}}</td>
+          <td> <input type="text" class="form-control" [(ngModel)]="taskList.name"></td>
+          <td>
+            <button type="button" class="btn btn-warning btn-sm" (click)="updateTaskList()">Update</button>
+            <button type="button" class="btn btn-danger btn-sm" (click)="deleteTaskList()">Delete</button>
+          </td>
+        </tr>
+      </table>
+    </div>
   </ng-container>
 
 </app-main>

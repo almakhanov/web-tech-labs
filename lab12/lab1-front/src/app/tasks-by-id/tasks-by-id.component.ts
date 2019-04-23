@@ -22,7 +22,7 @@ export class TasksByIdComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.id = parseInt(this.route.snapshot.paramMap.get('id'), null);
+    this.id = parseInt(this.route.snapshot.paramMap.get('pk'), null);
 
     if (this.id) {
       this.provider.getTaskDetail(this.id).then(res => {
@@ -33,6 +33,18 @@ export class TasksByIdComponent implements OnInit {
 
   navigateBack() {
     this.location.back();
+  }
+
+  updateTask() {
+    this.provider.updateTask(this.task).then(res => {
+      this.task = res;
+    });
+  }
+
+  deleteTask() {
+    this.provider.deleteTask(this.task.id).then(() => {
+      this.location.back();
+    });
   }
 
 }

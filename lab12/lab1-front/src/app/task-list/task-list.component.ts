@@ -11,6 +11,7 @@ import {Location} from '@angular/common';
 export class TaskListComponent implements OnInit {
 
   public taskLists: ITaskList[] = [];
+  public taskListName: string = "";
 
   constructor(
     private provider: ProviderService,
@@ -27,4 +28,14 @@ export class TaskListComponent implements OnInit {
   navigateBack() {
     this.location.back();
   }
+
+  createTaskList() {
+    if (this.taskListName != '') {
+      this.provider.createTaskList(this.taskListName).then(res => {
+        this.taskLists.push(res);
+        this.taskListName = "";
+      })
+    }
+  }
+
 }
